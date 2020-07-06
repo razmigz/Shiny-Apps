@@ -272,7 +272,8 @@ server <- function(input, output, session) {
         stat.table <- cbind(stat.name, stat.table) %>%
             tibble() %>%
             rename("Stat Name" = "stat.name")
-        stat.table
+        
+        DT::datatable(stat.table, options = list(paging = FALSE, searching = FALSE))
     })
     ######
     # set up images of pokemon for user to visualize which pokemon they picked
