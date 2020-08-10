@@ -363,8 +363,8 @@ server <- function(input, output, session) {
         # check for number of abilities for grammar purposes and tell user what abilities the pokemon can get;
         # they can have two or three abilities, so we must account for those cases
         if ((length(chosen.pok()$abilities$ability$name)) == 1) {
-            HTML(toTitleCase(chosen.pok()$name), "has the ability", toTitleCase(chosen.pok()$abilities$ability$name), ".")
-        }
+            HTML(c(toTitleCase(chosen.pok()$name), paste0("has the ability ", toTitleCase(chosen.pok()$abilities$ability$name), "."))
+        )}
         else if (is.na(abilities[3]) == TRUE) {
             ability1 <- abilities[1]
             ability2 <- abilities[2]
